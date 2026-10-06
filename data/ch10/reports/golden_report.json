@@ -1,0 +1,9 @@
+{
+  "ran_at": "2026-10-05T14:37:35",
+  "total": 30,
+  "hits": 30,
+  "rate": 1.0,
+  "pass_line": 0.8,
+  "passed": true,
+  "failures": []
+}

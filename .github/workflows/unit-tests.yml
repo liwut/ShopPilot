@@ -1,0 +1,28 @@
+name: unit-tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Prepare .env (placeholder values, tests never call real models)
+        run: cp .env.example .env
+
+      - name: Unit tests (no external services; MySQL-dependent flywheel tests excluded)
+        run: uv run pytest -q tests/graph tests/core --ignore=tests/core/test_flywheel.py

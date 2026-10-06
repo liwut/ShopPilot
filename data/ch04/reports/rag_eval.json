@@ -1,0 +1,226 @@
+{
+ "meta": {
+  "n_samples": 300,
+  "kb_chunks": 52,
+  "recall_k": 5,
+  "retrieve_k": 10,
+  "concurrency": 5,
+  "chat_model": "qwen3.8-max",
+  "generated_at": "2026-10-05 15:16"
+ },
+ "retrieval": {
+  "vector": {
+   "A_policy": {
+    "recall": 1.0,
+    "mrr": 0.947
+   },
+   "B_model": {
+    "recall": 0.983,
+    "mrr": 0.956
+   },
+   "C_colloquial": {
+    "recall": 0.983,
+    "mrr": 0.879
+   },
+   "E_multi": {
+    "recall": 0.914,
+    "mrr": 0.653
+   },
+   "overall": {
+    "recall": 0.97,
+    "mrr": 0.859
+   }
+  },
+  "bm25": {
+   "A_policy": {
+    "recall": 1.0,
+    "mrr": 0.921
+   },
+   "B_model": {
+    "recall": 1.0,
+    "mrr": 0.992
+   },
+   "C_colloquial": {
+    "recall": 0.833,
+    "mrr": 0.64
+   },
+   "E_multi": {
+    "recall": 0.819,
+    "mrr": 0.58
+   },
+   "overall": {
+    "recall": 0.913,
+    "mrr": 0.783
+   }
+  },
+  "hybrid": {
+   "A_policy": {
+    "recall": 1.0,
+    "mrr": 0.953
+   },
+   "B_model": {
+    "recall": 1.0,
+    "mrr": 0.979
+   },
+   "C_colloquial": {
+    "recall": 0.917,
+    "mrr": 0.76
+   },
+   "E_multi": {
+    "recall": 0.894,
+    "mrr": 0.628
+   },
+   "overall": {
+    "recall": 0.953,
+    "mrr": 0.83
+   }
+  },
+  "hybrid_rerank": {
+   "A_policy": {
+    "recall": 1.0,
+    "mrr": 0.983
+   },
+   "B_model": {
+    "recall": 1.0,
+    "mrr": 0.992
+   },
+   "C_colloquial": {
+    "recall": 1.0,
+    "mrr": 0.949
+   },
+   "E_multi": {
+    "recall": 0.944,
+    "mrr": 0.662
+   },
+   "overall": {
+    "recall": 0.986,
+    "mrr": 0.896
+   }
+  }
+ },
+ "evidence_coverage": {
+  "vector": {
+   "A_policy": 1.0,
+   "B_model": 1.0,
+   "C_colloquial": 1.0,
+   "E_multi": 0.967,
+   "overall": 0.992
+  },
+  "bm25": {
+   "A_policy": 1.0,
+   "B_model": 1.0,
+   "C_colloquial": 0.9,
+   "E_multi": 0.947,
+   "overall": 0.962
+  },
+  "hybrid": {
+   "A_policy": 1.0,
+   "B_model": 1.0,
+   "C_colloquial": 1.0,
+   "E_multi": 0.986,
+   "overall": 0.997
+  },
+  "hybrid_rerank": {
+   "A_policy": 1.0,
+   "B_model": 1.0,
+   "C_colloquial": 1.0,
+   "E_multi": 0.983,
+   "overall": 0.996
+  }
+ },
+ "generation": {
+  "answer_coverage": {
+   "vector": {
+    "A_policy": 0.95,
+    "B_model": 0.986,
+    "C_colloquial": 1.0,
+    "E_multi": 0.908,
+    "overall": 0.961
+   },
+   "bm25": {
+    "A_policy": 0.95,
+    "B_model": 0.994,
+    "C_colloquial": 0.883,
+    "E_multi": 0.867,
+    "overall": 0.924
+   },
+   "hybrid": {
+    "A_policy": 0.958,
+    "B_model": 0.986,
+    "C_colloquial": 1.0,
+    "E_multi": 0.906,
+    "overall": 0.963
+   },
+   "hybrid_rerank": {
+    "A_policy": 0.958,
+    "B_model": 0.994,
+    "C_colloquial": 1.0,
+    "E_multi": 0.911,
+    "overall": 0.966
+   }
+  },
+  "faithfulness": {
+   "A_policy": {
+    "v": 1.0,
+    "answered": 60
+   },
+   "B_model": {
+    "v": 1.0,
+    "answered": 60
+   },
+   "C_colloquial": {
+    "v": 1.0,
+    "answered": 60
+   },
+   "E_multi": {
+    "v": 1.0,
+    "answered": 60
+   }
+  },
+  "faithfulness_cases": [],
+  "model_guard": {
+   "hits": 0,
+   "fixed": 0,
+   "cases": []
+  },
+  "refusal": {
+   "rate": 0.933,
+   "total": 60,
+   "correct": 56,
+   "cases": [
+    {
+     "id": "D12",
+     "query": "能不能便宜点,可以砍价吗",
+     "section_path": "会员权益 / 会员等级",
+     "evidence": "会员等级:会员分普通、银卡、金卡三档,按累计消费自动升级,升级后立即生效,等级有效期为自然年。\n累计消费 1000 元起升银卡,累计消费 5000 元起升金卡。\n银卡享商品 9 折,金卡享商品 95 折并额外获赠一张店铺券。\n金卡会员每月享 3 次免运费,银卡会员每月 1 次。\n金卡会员生日当月可领取猫罐头礼盒一份,需在会员中心手动领取,过期不补发。"
+    },
+    {
+     "id": "D3",
+     "query": "能不能把发票邮寄到我公司的另一个地址",
+     "section_path": "开票与配送 / 可开票类型",
+     "evidence": "可开票类型:个人账户默认开具电子普通发票,抬头填个人姓名或单位名称均可。\n电子专票仅企业账户可申请,提交时必须填写完整的纳税人识别号、开户行与对公账号,信息不全不予受理。\n纸质发票需在申请时备注邮寄地址,快递费到付,不接受面单改寄。\n一笔订单只开一次票,发票金额以实付金额为准,不含运费与积分抵扣部分。"
+    },
+    {
+     "id": "D30",
+     "query": "能寄到日本吗,有没有国际快递",
+     "section_path": "商品与购物 FAQ / 配送范围与偏远地区",
+     "evidence": "配送范围与偏远地区:全国大部分地区支持配送,新疆、西藏、内蒙古等偏远地区运费另计且时效顺延;港澳台及海外暂不支持自营配送。"
+    },
+    {
+     "id": "D9",
+     "query": "能不能货到付款",
+     "section_path": "商品与购物 FAQ / 支持哪些支付方式",
+     "evidence": "支持哪些支付方式:下单支持支付宝、微信支付与主流银行储蓄卡/信用卡在线支付。暂不支持线下汇款,支付遇到问题可重试或更换支付方式。"
+    }
+   ],
+   "skipped_ids": []
+  },
+  "skipped": 0
+ },
+ "read_notes": {
+  "rag_mrr": "混合+重排总体 0.896 最高,但跨文档类只有 0.662,所以该看跨文档类这路短板怎么补再决定上不上线。",
+  "rag_recall": "你看跨文档类,纯 BM25 才 0.819,加了重排也就 0.944,说明要拼多块知识的题最容易漏证据,所以该盯紧跨文档类看它到底漏在哪个桶。",
+  "rag_coverage": "你看混合策略总体都 0.997 了,但口语类在纯 BM25 只有 0.9,所以别光盯总体,得按题型拆开看召回的证据到底够不够答题。",
+  "rag_answer_coverage": "你看纯 BM25 的口语类掉到 0.883,混合直接拉回 1.0,说明检索短板真会一路传导到答案缺要点,所以该重点看各策略下口语类和跨文档类的覆盖度变化。"
+ }
+}
